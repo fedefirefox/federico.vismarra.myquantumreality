@@ -604,18 +604,29 @@ h3 {
     box-shadow: 0 10px 28px rgba(12, 38, 35, 0.08);
 }
 
-.timeline-logo,
+.timeline-logo-link,
 .timeline-logo-pair {
     display: inline-flex;
-    width: 100%;
     height: 4.5rem;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    object-fit: contain;
+}
+
+.timeline-logo-link {
+    width: fit-content;
+    text-decoration: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.timeline-logo-link:hover {
+    opacity: 0.82;
+    transform: translateY(-2px);
 }
 
 .timeline-logo {
+    display: block;
+    object-fit: contain;
     max-width: 9rem;
     justify-self: start;
 }
@@ -663,6 +674,9 @@ h3 {
 }
 
 .timeline-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     padding: 0.22rem 0.48rem;
     color: var(--muted);
     background: var(--paper);
@@ -670,6 +684,38 @@ h3 {
     border-radius: 999px;
     font-size: 0.76rem;
     font-weight: 850;
+}
+
+.timeline-flag::before {
+    width: 1.15rem;
+    height: 0.78rem;
+    border: 1px solid rgba(21, 21, 21, 0.16);
+    border-radius: 2px;
+    content: "";
+}
+
+.flag-it::before {
+    background: linear-gradient(90deg, #009246 0 33.3%, #ffffff 33.3% 66.6%, #ce2b37 66.6%);
+}
+
+.flag-se::before {
+    background:
+        linear-gradient(90deg, transparent 0 31%, #fecc00 31% 43%, transparent 43%),
+        linear-gradient(180deg, transparent 0 38%, #fecc00 38% 52%, transparent 52%),
+        #006aa7;
+}
+
+.flag-ch::before {
+    background:
+        linear-gradient(90deg, transparent 0 38%, #ffffff 38% 62%, transparent 62%),
+        linear-gradient(180deg, transparent 0 38%, #ffffff 38% 62%, transparent 62%),
+        #d52b1e;
+}
+
+.flag-us::before {
+    background:
+        linear-gradient(90deg, #3c3b6e 0 42%, transparent 42%),
+        repeating-linear-gradient(180deg, #b22234 0 7.7%, #ffffff 7.7% 15.4%);
 }
 
 .timeline-card h3 {

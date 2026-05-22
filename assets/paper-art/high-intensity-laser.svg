@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">High-intensity laser artwork</title>
+  <desc id="desc">A focused laser beam compressing into a bright plasma target.</desc>
+  <defs>
+    <radialGradient id="plasma" cx="70%" cy="50%" r="36%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".18" stop-color="#ffd86b"/>
+      <stop offset=".5" stop-color="#d85c41"/>
+      <stop offset="1" stop-color="#151515"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="#16110f"/>
+  <path d="M20 250L570 300 20 350Z" fill="#0f9b9f" opacity=".45"/>
+  <path d="M20 275L570 300 20 325Z" fill="#f6f3ea" opacity=".86"/>
+  <circle cx="570" cy="300" r="154" fill="url(#plasma)"/>
+  <g fill="none" stroke="#f6f3ea" stroke-width="2" opacity=".35">
+    <circle cx="570" cy="300" r="190"/><circle cx="570" cy="300" r="230"/><circle cx="570" cy="300" r="270"/>
+  </g>
+  <g stroke="#c3922e" stroke-width="4" stroke-linecap="round">
+    <path d="M620 120l18-54M680 190l52-26M688 412l54 22M604 482l24 52"/>
+  </g>
+  <text x="52" y="74" fill="#f6f3ea" font-family="Arial, sans-serif" font-size="28" font-weight="700">High-Intensity Laser Physics</text>
+  <text x="52" y="116" fill="#d6ccb5" font-family="Arial, sans-serif" font-size="18">focused fields + nonlinear matter response</text>
+</svg>

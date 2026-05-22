@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Pulse propagation in waveplates artwork</title>
+  <desc id="desc">A pulse travelling through layered waveplates with polarization curves.</desc>
+  <rect width="800" height="600" fill="#f7f1e3"/>
+  <rect x="90" y="120" width="90" height="360" rx="8" fill="#0f7c80" opacity=".18" stroke="#0f7c80" stroke-width="3"/>
+  <rect x="250" y="100" width="90" height="400" rx="8" fill="#d85c41" opacity=".18" stroke="#d85c41" stroke-width="3"/>
+  <rect x="410" y="120" width="90" height="360" rx="8" fill="#c3922e" opacity=".2" stroke="#c3922e" stroke-width="3"/>
+  <path d="M20 300C72 230 126 370 178 300S282 230 334 300 438 370 490 300 594 230 646 300 750 370 802 300" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M20 250C72 180 126 320 178 250S282 180 334 250 438 320 490 250 594 180 646 250 750 320 802 250" fill="none" stroke="#0f7c80" stroke-width="5" opacity=".8"/>
+  <path d="M20 350C72 420 126 280 178 350S282 420 334 350 438 280 490 350 594 420 646 350 750 280 802 350" fill="none" stroke="#d85c41" stroke-width="5" opacity=".8"/>
+  <g stroke="#111" stroke-width="2" opacity=".35">
+    <path d="M92 150l86 300M252 132l86 336M412 150l86 300"/>
+    <path d="M178 150L92 450M338 132l-86 336M498 150l-86 300"/>
+  </g>
+  <text x="52" y="74" fill="#151515" font-family="Arial, sans-serif" font-size="28" font-weight="700">Propagation in Waveplates</text>
+  <text x="52" y="116" fill="#65615a" font-family="Arial, sans-serif" font-size="18">phase delay + polarization evolution</text>
+</svg>

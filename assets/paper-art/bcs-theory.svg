@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">BCS theory artwork</title>
+  <desc id="desc">Cooper pairs moving through a lattice over an energy gap diagram.</desc>
+  <rect width="800" height="600" fill="#151515"/>
+  <g opacity=".45" stroke="#ddd6c5" stroke-width="2">
+    <path d="M80 160H720M80 260H720M80 360H720M80 460H720M140 90V520M260 90V520M380 90V520M500 90V520M620 90V520"/>
+  </g>
+  <g fill="#f6f3ea">
+    <circle cx="140" cy="160" r="10"/><circle cx="260" cy="260" r="10"/><circle cx="380" cy="160" r="10"/><circle cx="500" cy="260" r="10"/><circle cx="620" cy="160" r="10"/>
+    <circle cx="140" cy="360" r="10"/><circle cx="260" cy="460" r="10"/><circle cx="380" cy="360" r="10"/><circle cx="500" cy="460" r="10"/><circle cx="620" cy="360" r="10"/>
+  </g>
+  <path d="M176 380C250 280 310 280 384 380S518 480 594 380" fill="none" stroke="#0f9b9f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M176 220C250 320 310 320 384 220S518 120 594 220" fill="none" stroke="#d85c41" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="176" cy="380" r="24" fill="#0f7c80"/><circle cx="384" cy="380" r="24" fill="#0f7c80"/><circle cx="594" cy="380" r="24" fill="#0f7c80"/>
+  <circle cx="176" cy="220" r="24" fill="#d85c41"/><circle cx="384" cy="220" r="24" fill="#d85c41"/><circle cx="594" cy="220" r="24" fill="#d85c41"/>
+  <path d="M116 300H684" stroke="#c3922e" stroke-width="4" stroke-dasharray="14 12"/>
+  <text x="52" y="74" fill="#f6f3ea" font-family="Arial, sans-serif" font-size="28" font-weight="700">BCS Theory</text>
+  <text x="52" y="116" fill="#cfc6b3" font-family="Arial, sans-serif" font-size="18">Cooper pairing + superconducting gap</text>
+</svg>

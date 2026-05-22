@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Imaginary unit artwork</title>
+  <desc id="desc">A complex plane with rotation through the imaginary axis.</desc>
+  <rect width="800" height="600" fill="#f7f1e3"/>
+  <g stroke="#cfc6b3" stroke-width="2">
+    <path d="M90 300H710M400 80V520"/>
+    <path d="M150 80V520M250 80V520M350 80V520M450 80V520M550 80V520M650 80V520M90 100H710M90 200H710M90 400H710M90 500H710"/>
+  </g>
+  <path d="M400 300m-150 0a150 150 0 1 0 300 0a150 150 0 1 0-300 0" fill="none" stroke="#0f7c80" stroke-width="10"/>
+  <path d="M400 300L400 150" stroke="#d85c41" stroke-width="10" stroke-linecap="round"/>
+  <path d="M400 300L550 300" stroke="#151515" stroke-width="10" stroke-linecap="round"/>
+  <path d="M400 150l-24 38h48Z" fill="#d85c41"/>
+  <path d="M550 300l-38-24v48Z" fill="#151515"/>
+  <circle cx="400" cy="300" r="18" fill="#c3922e"/>
+  <text x="568" y="294" fill="#151515" font-family="Arial, sans-serif" font-size="30" font-weight="800">1</text>
+  <text x="414" y="148" fill="#d85c41" font-family="Arial, sans-serif" font-size="30" font-weight="800">i</text>
+  <text x="52" y="74" fill="#151515" font-family="Arial, sans-serif" font-size="28" font-weight="700">The Conundrum of sqrt(-1)</text>
+  <text x="52" y="116" fill="#65615a" font-family="Arial, sans-serif" font-size="18">complex plane + rotation logic</text>
+</svg>

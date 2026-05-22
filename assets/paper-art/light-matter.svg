@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Semiclassical light-matter interaction artwork</title>
+  <desc id="desc">A photon-like wave interacting with a two-level quantum system.</desc>
+  <rect width="800" height="600" fill="#151515"/>
+  <g stroke="#5f594e" stroke-width="2" opacity=".5">
+    <path d="M80 170H720M80 300H720M80 430H720"/>
+  </g>
+  <path d="M40 300C98 224 156 376 214 300S330 224 388 300 504 376 562 300 678 224 736 300 852 376 910 300" fill="none" stroke="#f6f3ea" stroke-width="9" stroke-linecap="round"/>
+  <path d="M352 170h176M352 430h176" stroke="#0f7c80" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="440" cy="170" r="24" fill="#d85c41"/>
+  <circle cx="440" cy="430" r="24" fill="#c3922e"/>
+  <path d="M440 395V210" stroke="#f6f3ea" stroke-width="5" stroke-dasharray="12 14"/>
+  <path d="M440 210l-20 34h40Z" fill="#f6f3ea"/>
+  <path d="M274 210C230 240 230 360 274 390" fill="none" stroke="#d85c41" stroke-width="5"/>
+  <path d="M606 210C650 240 650 360 606 390" fill="none" stroke="#c3922e" stroke-width="5"/>
+  <text x="52" y="74" fill="#f6f3ea" font-family="Arial, sans-serif" font-size="28" font-weight="700">Light-Matter Interaction</text>
+  <text x="52" y="116" fill="#cfc6b3" font-family="Arial, sans-serif" font-size="18">classical field + quantum transition</text>
+</svg>

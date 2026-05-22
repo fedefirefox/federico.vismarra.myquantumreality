@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Gas jet fringe analysis artwork</title>
+  <desc id="desc">Interference fringes bending around a gas jet plume.</desc>
+  <rect width="800" height="600" fill="#f7f1e3"/>
+  <g fill="none" stroke-width="6" opacity=".9">
+    <path d="M-30 110C120 80 240 140 390 110S660 80 830 110" stroke="#151515"/>
+    <path d="M-30 170C120 140 240 200 390 170S660 140 830 170" stroke="#0f7c80"/>
+    <path d="M-30 230C120 200 240 260 390 230S660 200 830 230" stroke="#151515"/>
+    <path d="M-30 290C120 260 240 320 390 290S660 260 830 290" stroke="#0f7c80"/>
+    <path d="M-30 350C120 320 240 380 390 350S660 320 830 350" stroke="#151515"/>
+    <path d="M-30 410C120 380 240 440 390 410S660 380 830 410" stroke="#0f7c80"/>
+    <path d="M-30 470C120 440 240 500 390 470S660 440 830 470" stroke="#151515"/>
+  </g>
+  <path d="M355 528C344 430 310 362 326 282c12-64 68-88 74-174 8 86 62 110 74 174 16 80-18 148-29 246Z" fill="#d85c41" opacity=".24"/>
+  <path d="M362 528C354 442 334 376 352 310c16-58 44-84 48-142 4 58 32 84 48 142 18 66-2 132-10 218Z" fill="#ffffff" opacity=".62"/>
+  <rect x="320" y="520" width="160" height="42" rx="8" fill="#151515"/>
+  <text x="52" y="74" fill="#151515" font-family="Arial, sans-serif" font-size="28" font-weight="700">Gas Jet Characterization</text>
+  <text x="52" y="116" fill="#65615a" font-family="Arial, sans-serif" font-size="18">interference fringes + density diagnostics</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Y-gate and spintronics artwork</title>
+  <desc id="desc">A Y-shaped spintronic device with spin arrows and quantum gate nodes.</desc>
+  <rect width="800" height="600" fill="#f7f1e3"/>
+  <path d="M400 505V320M400 320L205 125M400 320l195-195" fill="none" stroke="#151515" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M400 505V320M400 320L205 125M400 320l195-195" fill="none" stroke="#0f7c80" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#151515" stroke-width="5">
+    <circle cx="400" cy="320" r="58"/><circle cx="205" cy="125" r="44"/><circle cx="595" cy="125" r="44"/><circle cx="400" cy="505" r="44"/>
+  </g>
+  <g stroke="#d85c41" stroke-width="7" stroke-linecap="round">
+    <path d="M174 125h62m-22-22 22 22-22 22"/>
+    <path d="M626 125h-62m22-22-22 22 22 22"/>
+    <path d="M400 536v-62m-22 22 22-22 22 22"/>
+  </g>
+  <text x="377" y="337" fill="#151515" font-family="Arial, sans-serif" font-size="46" font-weight="800">Y</text>
+  <text x="52" y="74" fill="#151515" font-family="Arial, sans-serif" font-size="28" font-weight="700">Y-Gate and Spintronics</text>
+  <text x="52" y="116" fill="#65615a" font-family="Arial, sans-serif" font-size="18">spin logic + quantum device geometry</text>
+</svg>

@@ -907,10 +907,6 @@ h3 {
 }
 
 @media (max-width: 1120px) {
-    .timeline {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .research-grid,
     .papers-grid,
     .theme-grid {
@@ -958,7 +954,6 @@ h3 {
 
     .theme-grid,
     .research-grid,
-    .timeline,
     .papers-grid {
         grid-template-columns: 1fr;
     }

@@ -43,7 +43,7 @@ const papersData = [
         title: "Preview: High-Intensity Laser Book",
         description: "An introductory preview of high-intensity laser physics, nonlinear response, and the regimes where light drives matter strongly.",
         link: "papers/hil.pdf",
-        image: "assets/paper-art/high-intensity-laser.svg",
+        image: "assets/paper-art/high-intensity-lasers-book-cover.jpg",
         tags: ["optics", "experimental"],
         type: "Course note",
         year: "Laser physics",
@@ -63,7 +63,7 @@ const papersData = [
         title: "On Semiclassical Light-Matter Interaction",
         description: "A bridge between classical fields and quantum systems, focused on the mechanics of light-matter interaction.",
         link: "papers/on-light-matter-quantum-interaction.pdf",
-        image: "assets/paper-art/light-matter.svg",
+        image: "assets/paper-art/light-matter-quantum-enhanced.png",
         tags: ["quantum", "optics"],
         type: "Course note",
         year: "Interaction",
@@ -81,11 +81,54 @@ const papersData = [
     }
 ];
 
+const fallbackLatestPaper = {
+    label: "Latest Publication",
+    title: "Self-compressed waveform-stable light transients enabling water-window attosecond spectroscopy",
+    journal: "Nature Photonics",
+    year: "2026",
+    date: "Published online November 13, 2025",
+    url: "https://www.nature.com/articles/s41566-025-01802-1",
+    summary: "Water-window attosecond spectroscopy driven by self-compressed, waveform-stable light transients.",
+    source: "Google Scholar profile, verified against publisher metadata"
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+    renderLatestPaper(fallbackLatestPaper);
+    loadLatestPaper();
     renderPapers("all");
     setupFilters();
     setupNavigationState();
 });
+
+async function loadLatestPaper() {
+    try {
+        const response = await fetch("latest-paper.json", { cache: "no-store" });
+        if (!response.ok) {
+            return;
+        }
+        renderLatestPaper(await response.json());
+    } catch (error) {
+        // Static file previews can block fetch; the fallback keeps the page complete.
+    }
+}
+
+function renderLatestPaper(paper) {
+    const latestPaper = document.getElementById("latestPaper");
+    if (!latestPaper || !paper) {
+        return;
+    }
+
+    latestPaper.innerHTML = `
+        <p class="eyebrow">${escapeHtml(paper.label || "Latest Publication")}</p>
+        <h3>${escapeHtml(paper.title)}</h3>
+        <div class="latest-paper-meta">
+            <span>${escapeHtml(paper.journal)}</span>
+            <span>${escapeHtml(paper.year)}</span>
+        </div>
+        <p>${escapeHtml(paper.summary)}</p>
+        <a class="latest-paper-link" href="${escapeAttribute(paper.url)}" target="_blank" rel="noopener">Read latest paper</a>
+    `;
+}
 
 function renderPapers(filter) {
     const papersGrid = document.getElementById("papersGrid");
@@ -112,6 +155,20 @@ function renderPapers(filter) {
             </div>
         </article>
     `).join("");
+}
+
+function escapeHtml(value = "") {
+    return String(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+    }[character]));
+}
+
+function escapeAttribute(value = "") {
+    return escapeHtml(value).replace(/`/g, "&#096;");
 }
 
 function setupFilters() {

@@ -19,6 +19,7 @@
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
             <a href="#about">About</a>
+            <a href="#timeline">Timeline</a>
             <a href="#research">Research</a>
             <a href="#notes">Notes</a>
         </nav>
@@ -33,6 +34,10 @@
                     <h1>Federico Vismarra</h1>
                 </div>
                 <p class="hero-subtitle">SLAC National Accelerator Laboratory, Stanford University</p>
+                <div class="affiliation-strip" aria-label="Current institutional affiliations">
+                    <span class="affiliation-badge slac-badge">SLAC</span>
+                    <span class="affiliation-badge stanford-badge">Stanford University</span>
+                </div>
                 <p class="hero-lede">I study electronic motion in matter at ultrashort timescales, using attosecond pulses, free-electron lasers, and strong-field light-matter interaction.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="https://scholar.google.com/citations?user=dOk0jQgAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -48,11 +53,41 @@
                 <h2>Research profile and professional links</h2>
                 <p>Contact points, publication profile, code, and CV in one place.</p>
                 <div class="hero-contact-grid">
-                    <a href="https://scholar.google.com/citations?user=dOk0jQgAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-                    <a href="https://www.linkedin.com/in/federico-vismarra-810713168" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://github.com/fedefirefox" target="_blank" rel="noopener">GitHub</a>
-                    <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+                    <a href="https://scholar.google.com/citations?user=dOk0jQgAAAAJ&hl=en" target="_blank" rel="noopener">
+                        <span class="link-label">
+                            <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3 2 9l10 6 10-6-10-6Z"></path>
+                                <path d="M6 12.5V16c1.8 1.8 3.8 2.7 6 2.7s4.2-.9 6-2.7v-3.5l-6 3.6-6-3.6Z"></path>
+                            </svg>
+                            Google Scholar
+                        </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/federico-vismarra-810713168" target="_blank" rel="noopener">
+                        <span class="link-label">
+                            <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5.2 8.6h3.3v10.2H5.2V8.6Zm1.7-4.9a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8Zm4.1 4.9h3.2V10c.5-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5v5.5h-3.3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6v5H11V8.6Z"></path>
+                            </svg>
+                            LinkedIn
+                        </span>
+                    </a>
+                    <a href="https://github.com/fedefirefox" target="_blank" rel="noopener">
+                        <span class="link-label">
+                            <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.5a9.7 9.7 0 0 0-3.1 18.9c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1.1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1.1a9.6 9.6 0 0 1 5.1 0c1.9-1.4 2.8-1.1 2.8-1.1.6 1.4.2 2.4.1 2.7.7.7 1.1 1.6 1.1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.8 1 .8 2v2.5c0 .3.2.6.8.5A9.7 9.7 0 0 0 12 2.5Z"></path>
+                            </svg>
+                            GitHub
+                        </span>
+                    </a>
+                    <a href="cv.pdf" target="_blank" rel="noopener">
+                        <span class="link-label">
+                            <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 3.5h8.2L18 7.3v13.2H6v-17Zm7.4 1.8V8h2.7l-2.7-2.7ZM8.4 11h7.2v1.4H8.4V11Zm0 3h7.2v1.4H8.4V14Zm0 3h4.8v1.4H8.4V17Z"></path>
+                            </svg>
+                            CV (PDF)
+                        </span>
+                    </a>
                 </div>
+                <article class="latest-paper" id="latestPaper" aria-live="polite"></article>
             </aside>
         </section>
 
@@ -74,6 +109,55 @@
                     </ul>
                     <p>This site keeps the public-facing work simple: research identity, selected links, and an open repository of notes for physics derivations and experimental ideas.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="section timeline-section">
+            <div class="section-heading">
+                <p class="eyebrow">My Timeline</p>
+                <h2>From engineering physics to attosecond science.</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-logo">POLIMI</div>
+                    <div>
+                        <span class="timeline-year">2020</span>
+                        <h3>MSc in Engineering Physics</h3>
+                        <p>Politecnico di Milano. Photonics and nano-optics track, completed with honors.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-logo lund">Lund</div>
+                    <div>
+                        <span class="timeline-year">2022</span>
+                        <h3>Visiting Researcher</h3>
+                        <p>Lund University. Work on high-order harmonic generation and high-intensity EUV physics.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-logo">PhD</div>
+                    <div>
+                        <span class="timeline-year">2024</span>
+                        <h3>PhD in Physics</h3>
+                        <p>Politecnico di Milano. Dissertation on attosecond pulse generation for spectroscopy of optoelectronic molecular systems.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-logo eth">ETH</div>
+                    <div>
+                        <span class="timeline-year">2024</span>
+                        <h3>Postdoctoral Fellow</h3>
+                        <p>ETH Zurich. Attosecond soft X-ray science, water-window beamline development, and international FEL projects.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-logo slac">SLAC</div>
+                    <div>
+                        <span class="timeline-year">2026</span>
+                        <h3>SLAC, Stanford University</h3>
+                        <p>Attosecond science at the Linac Coherent Light Source, connecting ultrafast laser methods with free-electron laser experiments.</p>
+                    </div>
+                </article>
             </div>
         </section>
 

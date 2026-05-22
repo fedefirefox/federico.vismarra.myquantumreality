@@ -200,10 +200,40 @@ h3 {
 }
 
 .hero-subtitle {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     color: var(--teal-dark);
     font-size: clamp(1.08rem, 2.2vw, 1.45rem);
     font-weight: 850;
+}
+
+.affiliation-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.15rem;
+}
+
+.affiliation-badge {
+    display: inline-flex;
+    min-height: 2.55rem;
+    align-items: center;
+    padding: 0.55rem 0.85rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 22px rgba(12, 38, 35, 0.07);
+    font-weight: 950;
+    letter-spacing: 0.02em;
+}
+
+.slac-badge {
+    color: #004b87;
+}
+
+.stanford-badge {
+    color: #8c1515;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.03rem;
 }
 
 .hero-lede {
@@ -310,6 +340,20 @@ h3 {
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.link-label {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.link-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 auto;
+    fill: currentColor;
+}
+
 .hero-contact-grid a::after {
     color: var(--coral);
     content: "->";
@@ -319,6 +363,67 @@ h3 {
     border-color: rgba(15, 124, 128, 0.48);
     box-shadow: 0 10px 24px rgba(12, 38, 35, 0.1);
     transform: translateY(-2px);
+}
+
+.latest-paper {
+    margin-top: 1rem;
+    padding: 1rem;
+    background:
+        linear-gradient(135deg, rgba(15, 124, 128, 0.08), rgba(101, 138, 47, 0.08)),
+        var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.latest-paper .eyebrow {
+    margin-bottom: 0.55rem;
+}
+
+.latest-paper h3 {
+    margin-bottom: 0.6rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.latest-paper p {
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+}
+
+.latest-paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+}
+
+.latest-paper-meta span {
+    padding: 0.24rem 0.5rem;
+    color: var(--teal-dark);
+    background: rgba(15, 124, 128, 0.08);
+    border: 1px solid rgba(15, 124, 128, 0.18);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 850;
+}
+
+.latest-paper-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--ink);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.latest-paper-link::after {
+    color: var(--coral);
+    content: "->";
+    transition: transform 180ms ease;
+}
+
+.latest-paper-link:hover::after {
+    transform: translateX(4px);
 }
 
 .current-research {
@@ -418,6 +523,77 @@ h3 {
 }
 
 .theme-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.timeline-section {
+    background: var(--paper-soft);
+    border-top: 1px solid var(--line);
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--line);
+}
+
+.timeline-item {
+    display: grid;
+    align-content: start;
+    min-height: 20rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.timeline-logo {
+    display: inline-flex;
+    width: 4rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    background: var(--ink);
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 950;
+    letter-spacing: 0.04em;
+}
+
+.timeline-logo.lund {
+    background: #7a003c;
+}
+
+.timeline-logo.eth {
+    background: #111111;
+}
+
+.timeline-logo.slac {
+    background: #004b87;
+}
+
+.timeline-year {
+    display: inline-flex;
+    margin-bottom: 0.7rem;
+    color: var(--teal-dark);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.timeline-item h3 {
+    margin-bottom: 0.75rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.timeline-item p {
     margin-bottom: 0;
     color: var(--muted);
 }
@@ -524,7 +700,8 @@ h3 {
 .paper-art {
     width: 100%;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
+    background: #050607;
 }
 
 .paper-body {
@@ -644,6 +821,10 @@ h3 {
 }
 
 @media (max-width: 1120px) {
+    .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .research-grid,
     .papers-grid,
     .theme-grid {
@@ -691,6 +872,7 @@ h3 {
 
     .theme-grid,
     .research-grid,
+    .timeline,
     .papers-grid {
         grid-template-columns: 1fr;
     }

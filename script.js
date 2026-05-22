@@ -23,7 +23,7 @@ const papersData = [
         title: "BCS Theory: An ab initio Discussion",
         description: "A ground-up discussion of superconductivity through Cooper pairing and the Bardeen-Cooper-Schrieffer framework.",
         link: "papers/bcsfinale-1.pdf",
-        image: "assets/paper-art/bcs-theory.svg",
+        image: "assets/paper-art/bcs-superconducting-magnet.png",
         tags: ["quantum"],
         type: "Course note",
         year: "Superconductivity",

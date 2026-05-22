@@ -5,7 +5,7 @@ const papersData = [
         link: "papers/theclassicaldipoleradiation.pdf",
         image: "assets/paper-art/classical-dipole.svg",
         tags: ["optics", "quantum"],
-        type: "Theory note",
+        type: "Course note",
         year: "Electrodynamics",
         date: "2019-2020"
     },
@@ -15,7 +15,7 @@ const papersData = [
         link: "papers/pulsepropagationinwaveplates.pdf",
         image: "assets/paper-art/waveplates.svg",
         tags: ["optics"],
-        type: "Optics",
+        type: "Course note",
         year: "Pulse propagation",
         date: "2020-2021"
     },
@@ -25,7 +25,7 @@ const papersData = [
         link: "papers/bcsfinale-1.pdf",
         image: "assets/paper-art/bcs-theory.svg",
         tags: ["quantum"],
-        type: "Condensed matter",
+        type: "Course note",
         year: "Superconductivity",
         date: "2021-2022"
     },
@@ -35,7 +35,7 @@ const papersData = [
         link: "papers/ygate.pdf",
         image: "assets/paper-art/y-gate-spintronics.svg",
         tags: ["quantum"],
-        type: "Quantum devices",
+        type: "Course note",
         year: "Spintronics",
         date: "2022-2023"
     },
@@ -45,7 +45,7 @@ const papersData = [
         link: "papers/hil.pdf",
         image: "assets/paper-art/high-intensity-laser.svg",
         tags: ["optics", "experimental"],
-        type: "Book preview",
+        type: "Course note",
         year: "Laser physics",
         date: "2023-2024"
     },
@@ -55,7 +55,7 @@ const papersData = [
         link: "papers/gasjetcharacterization.pdf",
         image: "assets/paper-art/gas-jet-fringes.svg",
         tags: ["experimental", "optics"],
-        type: "Experimental",
+        type: "Course note",
         year: "Diagnostics",
         date: "2019-2020"
     },
@@ -65,7 +65,7 @@ const papersData = [
         link: "papers/on-light-matter-quantum-interaction.pdf",
         image: "assets/paper-art/light-matter.svg",
         tags: ["quantum", "optics"],
-        type: "Theory note",
+        type: "Course note",
         year: "Interaction",
         date: "2021-2022"
     },
@@ -75,7 +75,7 @@ const papersData = [
         link: "papers/i__imaginary_units.pdf",
         image: "assets/paper-art/imaginary-unit.svg",
         tags: ["math"],
-        type: "Mathematics",
+        type: "Course note",
         year: "Complex numbers",
         date: "2020-2021"
     }

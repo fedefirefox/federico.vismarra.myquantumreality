@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fedefirefox.github.io/federico.vismarra.myquantumreality/sitemap.xml

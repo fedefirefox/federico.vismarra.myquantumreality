@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLatestPaper(fallbackLatestPaper);
     loadLatestPaper();
     setupAreaSlider();
+    setupCatPopover();
     renderPapers("all");
     setupFilters();
     setupNavigationState();
@@ -267,7 +268,11 @@ function setupAreaSlider() {
     navButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const direction = Number(button.dataset.areaDirection);
-            renderArea(Number(slider.dataset.active || 0) + direction);
+            if (direction > 0) {
+                window.areaSlider.next();
+                return;
+            }
+            window.areaSlider.previous();
         });
     });
 
@@ -275,7 +280,77 @@ function setupAreaSlider() {
         dot.addEventListener("click", () => renderArea(Number(dot.dataset.areaIndex)));
     });
 
+    window.areaSlider = {
+        goTo: renderArea,
+        next: () => {
+            const currentIndex = Number(slider.dataset.active || 0);
+            if (currentIndex === coreAreas.length - 1) {
+                showCatPopover(() => renderArea(0));
+                return;
+            }
+            renderArea(currentIndex + 1);
+        },
+        previous: () => renderArea(Number(slider.dataset.active || 0) - 1)
+    };
+
     renderArea(0);
+}
+
+let catPopoverCallback = null;
+
+function setupCatPopover() {
+    const popover = document.getElementById("catPopover");
+    if (!popover) {
+        return;
+    }
+
+    const closeButtons = popover.querySelectorAll(".cat-close, .cat-collapse");
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeCatPopover);
+    });
+
+    popover.addEventListener("click", (event) => {
+        if (event.target === popover) {
+            closeCatPopover();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && popover.classList.contains("open")) {
+            closeCatPopover();
+        }
+    });
+}
+
+function showCatPopover(afterClose) {
+    const popover = document.getElementById("catPopover");
+    if (!popover) {
+        if (typeof afterClose === "function") {
+            afterClose();
+        }
+        return;
+    }
+
+    catPopoverCallback = typeof afterClose === "function" ? afterClose : null;
+    popover.classList.add("open");
+    popover.setAttribute("aria-hidden", "false");
+    popover.querySelector(".cat-collapse")?.focus();
+}
+
+function closeCatPopover() {
+    const popover = document.getElementById("catPopover");
+    if (!popover) {
+        return;
+    }
+
+    popover.classList.remove("open");
+    popover.setAttribute("aria-hidden", "true");
+
+    const callback = catPopoverCallback;
+    catPopoverCallback = null;
+    if (callback) {
+        callback();
+    }
 }
 
 function renderHighlightedDescription(description, highlight) {

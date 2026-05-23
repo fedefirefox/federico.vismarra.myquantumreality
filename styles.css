@@ -1141,6 +1141,19 @@ h3 {
     font-weight: 950;
 }
 
+.area-card .area-ai-aside {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 1rem;
+    padding: 0.38rem 0.58rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 750;
+}
+
 .area-dots {
     display: flex;
     gap: 0.45rem;

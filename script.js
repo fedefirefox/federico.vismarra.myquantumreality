@@ -97,25 +97,29 @@ const coreAreas = [
         title: "Attosecond science",
         kicker: "Electronic motion in real time",
         description: "I work with ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable.",
-        highlight: "timing becomes the observable"
+        highlight: "timing becomes the observable",
+        aside: "AI aside: even my latency feels embarrassed by an attosecond."
     },
     {
         title: "Soft X-ray and EUV physics",
         kicker: "Seeing structure through short wavelengths",
         description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible.",
-        highlight: "electronic structure becomes visible"
+        highlight: "electronic structure becomes visible",
+        aside: "AI aside: finally, a wavelength short enough to inspect my hidden layers."
     },
     {
         title: "Laser technology",
         kicker: "Making difficult experiments behave",
         description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments stable enough to ask sharp questions.",
-        highlight: "stable enough to ask sharp questions"
+        highlight: "stable enough to ask sharp questions",
+        aside: "AI aside: alignment is easier when the beam actually agrees to be aligned."
     },
     {
         title: "Light-matter interaction",
         kicker: "Where fields meet quantum response",
         description: "Strong-field dynamics from experimental systems to simulation tools, connecting classical fields with quantum response.",
-        highlight: "Classical fields with quantum response"
+        highlight: "Classical fields with quantum response",
+        aside: "AI aside: a classical field and a quantum system walk into a Hamiltonian."
     }
 ];
 
@@ -219,6 +223,7 @@ function setupAreaSlider() {
             </div>
             <h3>${escapeHtml(area.title)}</h3>
             <p>${renderHighlightedDescription(area.description, area.highlight)}</p>
+            <p class="area-ai-aside">${escapeHtml(area.aside)}</p>
         </article>
     `).join("");
 

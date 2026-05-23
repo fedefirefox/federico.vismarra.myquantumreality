@@ -118,7 +118,13 @@
                             <button type="button" class="area-tab" data-area-index="2" role="tab" aria-selected="false">Lasers</button>
                             <button type="button" class="area-tab" data-area-index="3" role="tab" aria-selected="false">Light-matter</button>
                         </div>
-                        <article class="area-card" id="areaCard" aria-live="polite"></article>
+                        <div class="area-progress" aria-hidden="true">
+                            <span class="area-progress-bar"></span>
+                        </div>
+                        <div class="area-viewport">
+                            <div class="area-track" id="areaTrack" aria-live="polite"></div>
+                        </div>
+                        <div class="area-dots" aria-label="Core area slide status"></div>
                     </div>
                 </div>
             </div>

@@ -95,19 +95,27 @@ const fallbackLatestPaper = {
 const coreAreas = [
     {
         title: "Attosecond science",
-        description: "Ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable."
+        kicker: "Electronic motion in real time",
+        description: "I work with ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable.",
+        highlight: "Timing becomes the observable"
     },
     {
         title: "Soft X-ray and EUV physics",
-        description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible."
+        kicker: "Seeing structure through short wavelengths",
+        description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible.",
+        highlight: "Electronic structure becomes visible"
     },
     {
         title: "Laser technology",
-        description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments behave."
+        kicker: "Making difficult experiments behave",
+        description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments stable enough to ask sharp questions.",
+        highlight: "Stable enough to ask sharp questions"
     },
     {
         title: "Light-matter interaction",
-        description: "Strong-field dynamics from experimental systems to simulation tools, connecting classical fields with quantum response."
+        kicker: "Where fields meet quantum response",
+        description: "Strong-field dynamics from experimental systems to simulation tools, connecting classical fields with quantum response.",
+        highlight: "Classical fields with quantum response"
     }
 ];
 
@@ -193,18 +201,40 @@ function escapeAttribute(value = "") {
 
 function setupAreaSlider() {
     const slider = document.querySelector(".area-slider");
-    const card = document.getElementById("areaCard");
+    const track = document.getElementById("areaTrack");
     const tabs = [...document.querySelectorAll(".area-tab")];
     const navButtons = [...document.querySelectorAll("[data-area-direction]")];
+    const progressBar = document.querySelector(".area-progress-bar");
+    const dotsContainer = document.querySelector(".area-dots");
 
-    if (!slider || !card || tabs.length === 0) {
+    if (!slider || !track || tabs.length === 0 || coreAreas.length === 0) {
         return;
     }
 
+    track.innerHTML = coreAreas.map((area, index) => `
+        <article class="area-card" data-area-slide="${index}" aria-hidden="${index === 0 ? "false" : "true"}">
+            <div class="area-card-topline">
+                <span class="area-card-index">${String(index + 1).padStart(2, "0")} / ${String(coreAreas.length).padStart(2, "0")}</span>
+                <span class="area-kicker">${escapeHtml(area.kicker)}</span>
+            </div>
+            <h3>${escapeHtml(area.title)}</h3>
+            <p>${renderHighlightedDescription(area.description, area.highlight)}</p>
+        </article>
+    `).join("");
+
+    if (dotsContainer) {
+        dotsContainer.innerHTML = coreAreas.map((area, index) => `
+            <button type="button" class="area-dot${index === 0 ? " active" : ""}" data-area-index="${index}" aria-label="Show ${escapeAttribute(area.title)}"></button>
+        `).join("");
+    }
+
+    const dots = [...document.querySelectorAll(".area-dot")];
+    const slides = [...document.querySelectorAll("[data-area-slide]")];
+
     const renderArea = (index) => {
         const normalizedIndex = (index + coreAreas.length) % coreAreas.length;
-        const area = coreAreas[normalizedIndex];
         slider.dataset.active = String(normalizedIndex);
+        track.style.transform = `translateX(-${normalizedIndex * 100}%)`;
 
         tabs.forEach((tab, tabIndex) => {
             const isActive = tabIndex === normalizedIndex;
@@ -212,11 +242,17 @@ function setupAreaSlider() {
             tab.setAttribute("aria-selected", String(isActive));
         });
 
-        card.innerHTML = `
-            <span class="area-card-index">${String(normalizedIndex + 1).padStart(2, "0")} / ${String(coreAreas.length).padStart(2, "0")}</span>
-            <h3>${escapeHtml(area.title)}</h3>
-            <p>${escapeHtml(area.description)}</p>
-        `;
+        dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle("active", dotIndex === normalizedIndex);
+        });
+
+        slides.forEach((slide, slideIndex) => {
+            slide.setAttribute("aria-hidden", String(slideIndex !== normalizedIndex));
+        });
+
+        if (progressBar) {
+            progressBar.style.width = `${((normalizedIndex + 1) / coreAreas.length) * 100}%`;
+        }
     };
 
     tabs.forEach((tab) => {
@@ -230,7 +266,22 @@ function setupAreaSlider() {
         });
     });
 
+    dots.forEach((dot) => {
+        dot.addEventListener("click", () => renderArea(Number(dot.dataset.areaIndex)));
+    });
+
     renderArea(0);
+}
+
+function renderHighlightedDescription(description, highlight) {
+    const safeDescription = escapeHtml(description);
+    const safeHighlight = escapeHtml(highlight);
+
+    if (!highlight || !safeDescription.includes(safeHighlight)) {
+        return safeDescription;
+    }
+
+    return safeDescription.replace(safeHighlight, `<strong>${safeHighlight}</strong>`);
 }
 
 function setupFilters() {

@@ -92,9 +92,29 @@ const fallbackLatestPaper = {
     source: "Google Scholar profile, verified against publisher metadata"
 };
 
+const coreAreas = [
+    {
+        title: "Attosecond science",
+        description: "Ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable."
+    },
+    {
+        title: "Soft X-ray and EUV physics",
+        description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible."
+    },
+    {
+        title: "Laser technology",
+        description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments behave."
+    },
+    {
+        title: "Light-matter interaction",
+        description: "Strong-field dynamics from experimental systems to simulation tools, connecting classical fields with quantum response."
+    }
+];
+
 document.addEventListener("DOMContentLoaded", () => {
     renderLatestPaper(fallbackLatestPaper);
     loadLatestPaper();
+    setupAreaSlider();
     renderPapers("all");
     setupFilters();
     setupNavigationState();
@@ -169,6 +189,48 @@ function escapeHtml(value = "") {
 
 function escapeAttribute(value = "") {
     return escapeHtml(value).replace(/`/g, "&#096;");
+}
+
+function setupAreaSlider() {
+    const slider = document.querySelector(".area-slider");
+    const card = document.getElementById("areaCard");
+    const tabs = [...document.querySelectorAll(".area-tab")];
+    const navButtons = [...document.querySelectorAll("[data-area-direction]")];
+
+    if (!slider || !card || tabs.length === 0) {
+        return;
+    }
+
+    const renderArea = (index) => {
+        const normalizedIndex = (index + coreAreas.length) % coreAreas.length;
+        const area = coreAreas[normalizedIndex];
+        slider.dataset.active = String(normalizedIndex);
+
+        tabs.forEach((tab, tabIndex) => {
+            const isActive = tabIndex === normalizedIndex;
+            tab.classList.toggle("active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+        });
+
+        card.innerHTML = `
+            <span class="area-card-index">${String(normalizedIndex + 1).padStart(2, "0")} / ${String(coreAreas.length).padStart(2, "0")}</span>
+            <h3>${escapeHtml(area.title)}</h3>
+            <p>${escapeHtml(area.description)}</p>
+        `;
+    };
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => renderArea(Number(tab.dataset.areaIndex)));
+    });
+
+    navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const direction = Number(button.dataset.areaDirection);
+            renderArea(Number(slider.dataset.active || 0) + direction);
+        });
+    });
+
+    renderArea(0);
 }
 
 function setupFilters() {

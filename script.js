@@ -261,6 +261,17 @@ function setupAreaSlider() {
         }
     };
 
+    const goNext = () => {
+        const currentIndex = Number(slider.dataset.active || 0);
+        if (currentIndex === coreAreas.length - 1) {
+            showCatPopover(() => renderArea(0));
+            return;
+        }
+        renderArea(currentIndex + 1);
+    };
+
+    const goPrevious = () => renderArea(Number(slider.dataset.active || 0) - 1);
+
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => renderArea(Number(tab.dataset.areaIndex)));
     });
@@ -269,10 +280,10 @@ function setupAreaSlider() {
         button.addEventListener("click", () => {
             const direction = Number(button.dataset.areaDirection);
             if (direction > 0) {
-                window.areaSlider.next();
+                goNext();
                 return;
             }
-            window.areaSlider.previous();
+            goPrevious();
         });
     });
 
@@ -282,15 +293,8 @@ function setupAreaSlider() {
 
     window.areaSlider = {
         goTo: renderArea,
-        next: () => {
-            const currentIndex = Number(slider.dataset.active || 0);
-            if (currentIndex === coreAreas.length - 1) {
-                showCatPopover(() => renderArea(0));
-                return;
-            }
-            renderArea(currentIndex + 1);
-        },
-        previous: () => renderArea(Number(slider.dataset.active || 0) - 1)
+        next: goNext,
+        previous: goPrevious
     };
 
     renderArea(0);

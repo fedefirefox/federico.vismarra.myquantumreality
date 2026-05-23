@@ -97,19 +97,19 @@ const coreAreas = [
         title: "Attosecond science",
         kicker: "Electronic motion in real time",
         description: "I work with ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable.",
-        highlight: "Timing becomes the observable"
+        highlight: "timing becomes the observable"
     },
     {
         title: "Soft X-ray and EUV physics",
         kicker: "Seeing structure through short wavelengths",
         description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible.",
-        highlight: "Electronic structure becomes visible"
+        highlight: "electronic structure becomes visible"
     },
     {
         title: "Laser technology",
         kicker: "Making difficult experiments behave",
         description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments stable enough to ask sharp questions.",
-        highlight: "Stable enough to ask sharp questions"
+        highlight: "stable enough to ask sharp questions"
     },
     {
         title: "Light-matter interaction",

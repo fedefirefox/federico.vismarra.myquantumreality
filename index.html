@@ -104,14 +104,22 @@
                 <div class="about-copy">
                     <p>I am a scientist and physics engineer with expertise in attosecond physics, soft X-ray science, and laser technologies. My research follows electronic motion in atoms, molecules, and materials at the shortest timescales modern experimental tools can access.</p>
                     <p>Before joining SLAC, I was a postdoctoral fellow at ETH Zurich and a postdoctoral researcher at Politecnico di Milano. I earned my PhD in Physics at Politecnico di Milano, working on attosecond pulse generation for spectroscopy of optoelectronic molecular systems.</p>
-                    <p>Core areas:</p>
-                    <ul>
-                        <li><strong>Attosecond science:</strong> ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments</li>
-                        <li><strong>Soft X-ray and EUV physics:</strong> high-harmonic generation, isolated attosecond pulses, and transient absorption</li>
-                        <li><strong>Laser technology:</strong> few-femtosecond sources, beamline design, and optical diagnostics</li>
-                        <li><strong>Light-matter interaction:</strong> strong-field dynamics from experimental systems to simulation tools</li>
-                    </ul>
-                    <p>This site keeps the public-facing work simple: research identity, selected links, and an open repository of notes for physics derivations and experimental ideas.</p>
+                    <div class="area-slider" data-active="0">
+                        <div class="area-slider-header">
+                            <p class="eyebrow">Core Areas</p>
+                            <div class="area-controls" aria-label="Browse core areas">
+                                <button type="button" class="area-nav" data-area-direction="-1" aria-label="Previous core area">Prev</button>
+                                <button type="button" class="area-nav" data-area-direction="1" aria-label="Next core area">Next</button>
+                            </div>
+                        </div>
+                        <div class="area-tabs" role="tablist" aria-label="Core research areas">
+                            <button type="button" class="area-tab active" data-area-index="0" role="tab" aria-selected="true">Attosecond</button>
+                            <button type="button" class="area-tab" data-area-index="1" role="tab" aria-selected="false">Soft X-ray</button>
+                            <button type="button" class="area-tab" data-area-index="2" role="tab" aria-selected="false">Lasers</button>
+                            <button type="button" class="area-tab" data-area-index="3" role="tab" aria-selected="false">Light-matter</button>
+                        </div>
+                        <article class="area-card" id="areaCard" aria-live="polite"></article>
+                    </div>
                 </div>
             </div>
         </section>

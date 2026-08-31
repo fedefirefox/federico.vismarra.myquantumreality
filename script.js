@@ -7,7 +7,8 @@ const papersData = [
         tags: ["optics", "quantum"],
         type: "Course note",
         year: "Electrodynamics",
-        date: "2019-2020"
+        date: "2019-2020",
+        imageAlt: "Classical dipole emission field pattern"
     },
     {
         title: "Propagation of Pulses in Waveplates",
@@ -17,7 +18,8 @@ const papersData = [
         tags: ["optics"],
         type: "Course note",
         year: "Pulse propagation",
-        date: "2020-2021"
+        date: "2020-2021",
+        imageAlt: "Optical waveplates used for pulse propagation and polarization control"
     },
     {
         title: "BCS Theory: An ab initio Discussion",
@@ -27,7 +29,8 @@ const papersData = [
         tags: ["quantum"],
         type: "Course note",
         year: "Superconductivity",
-        date: "2021-2022"
+        date: "2021-2022",
+        imageAlt: "Realistic superconducting magnet levitation setup"
     },
     {
         title: "Y-Gate and Spintronics",
@@ -37,7 +40,8 @@ const papersData = [
         tags: ["quantum"],
         type: "Course note",
         year: "Spintronics",
-        date: "2022-2023"
+        date: "2022-2023",
+        imageAlt: "Y-gate and spintronics diagram"
     },
     {
         title: "Preview: High-Intensity Laser Book",
@@ -47,7 +51,8 @@ const papersData = [
         tags: ["optics", "experimental"],
         type: "Course note",
         year: "Laser physics",
-        date: "2023-2024"
+        date: "2023-2024",
+        imageAlt: "High-intensity lasers book cover"
     },
     {
         title: "Gas Jet Characterization with Fringe Analysis",
@@ -57,7 +62,8 @@ const papersData = [
         tags: ["experimental", "optics"],
         type: "Course note",
         year: "Diagnostics",
-        date: "2019-2020"
+        date: "2019-2020",
+        imageAlt: "Gas jet density depletion measured with optical fringes"
     },
     {
         title: "On Semiclassical Light-Matter Interaction",
@@ -67,7 +73,8 @@ const papersData = [
         tags: ["quantum", "optics"],
         type: "Course note",
         year: "Interaction",
-        date: "2021-2022"
+        date: "2021-2022",
+        imageAlt: "Semiclassical light-matter interaction illustration"
     },
     {
         title: "The Conundrum of sqrt(-1) = i",
@@ -77,7 +84,8 @@ const papersData = [
         tags: ["math"],
         type: "Course note",
         year: "Complex numbers",
-        date: "2020-2021"
+        date: "2020-2021",
+        imageAlt: "Complex plane diagram for the imaginary unit"
     }
 ];
 
@@ -172,7 +180,7 @@ function renderPapers(filter) {
     papersGrid.innerHTML = visiblePapers.map((paper) => `
         <article class="paper-card">
             <a class="paper-art-link" href="${paper.link}" target="_blank" rel="noopener" aria-label="Open ${paper.title}">
-                <img class="paper-art" src="${paper.image}" alt="">
+                <img class="paper-art" src="${paper.image}" alt="${escapeAttribute(paper.imageAlt || paper.title)}" loading="lazy" decoding="async">
             </a>
             <div class="paper-body">
                 <div class="paper-meta">

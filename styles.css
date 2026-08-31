@@ -41,6 +41,25 @@ a {
     color: inherit;
 }
 
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.65rem 0.9rem;
+    color: var(--white);
+    background: var(--ink);
+    border-radius: 999px;
+    font-weight: 900;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -128,15 +147,35 @@ a {
 }
 
 .hero {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.7fr);
     gap: clamp(2rem, 7vw, 7rem);
     align-items: center;
     min-height: min(45rem, calc(100vh - 5rem));
     padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem);
+    overflow: hidden;
+}
+
+.hero::after {
+    position: absolute;
+    right: clamp(1rem, 5vw, 5rem);
+    bottom: 2rem;
+    width: min(28rem, 34vw);
+    height: min(28rem, 34vw);
+    background:
+        linear-gradient(rgba(15, 124, 128, 0.12), rgba(15, 124, 128, 0.12)) 50% 50% / 1px 100% no-repeat,
+        linear-gradient(90deg, rgba(15, 124, 128, 0.12), rgba(15, 124, 128, 0.12)) 50% 50% / 100% 1px no-repeat;
+    border: 1px solid rgba(15, 124, 128, 0.1);
+    border-radius: 50%;
+    content: "";
+    opacity: 0.65;
+    pointer-events: none;
 }
 
 .hero-copy {
+    position: relative;
+    z-index: 1;
     max-width: 58rem;
 }
 
@@ -277,9 +316,45 @@ h3 {
 
 .hero-lede {
     max-width: 42rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--muted);
     font-size: clamp(1.05rem, 2vw, 1.32rem);
+}
+
+.hero-snapshot {
+    display: grid;
+    max-width: 46rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: rgba(15, 124, 128, 0.18);
+    border: 1px solid rgba(15, 124, 128, 0.18);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(12, 38, 35, 0.08);
+}
+
+.hero-snapshot div {
+    min-height: 5.4rem;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-snapshot span,
+.timeline-hint {
+    display: block;
+    color: var(--teal-dark);
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.hero-snapshot strong {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    line-height: 1.25;
 }
 
 .hero-actions {
@@ -347,6 +422,8 @@ h3 {
 }
 
 .hero-contact {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: 34rem;
     justify-self: end;
@@ -355,6 +432,15 @@ h3 {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+}
+
+.hero-contact::before {
+    position: absolute;
+    inset: 0.75rem;
+    border: 1px solid rgba(15, 124, 128, 0.11);
+    border-radius: calc(var(--radius) - 2px);
+    content: "";
+    pointer-events: none;
 }
 
 .hero-contact h2 {
@@ -589,6 +675,19 @@ h3 {
         radial-gradient(circle at 8% 20%, rgba(15, 124, 128, 0.08), transparent 18rem),
         rgba(255, 255, 255, 0.72);
     box-shadow: 0 14px 44px rgba(12, 38, 35, 0.08);
+    scroll-snap-type: x proximity;
+    scrollbar-color: rgba(7, 86, 90, 0.35) transparent;
+}
+
+.timeline-hint {
+    position: sticky;
+    left: 0.5rem;
+    width: fit-content;
+    margin: -1.35rem 0 1.05rem;
+    padding: 0.3rem 0.55rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+    border-radius: 999px;
 }
 
 .timeline-axis {
@@ -625,6 +724,7 @@ h3 {
 .timeline-item {
     position: relative;
     padding-top: 2rem;
+    scroll-snap-align: start;
 }
 
 .timeline-dot {
@@ -966,6 +1066,15 @@ h3 {
     align-items: start;
 }
 
+.about-layout > *,
+.about-copy,
+.area-slider,
+.area-viewport,
+.area-track,
+.area-card {
+    min-width: 0;
+}
+
 .about-copy {
     color: var(--muted);
     font-size: 1.12rem;
@@ -1144,6 +1253,7 @@ h3 {
 .area-card .area-ai-aside {
     display: inline-flex;
     width: fit-content;
+    max-width: 100%;
     margin-top: 1rem;
     padding: 0.38rem 0.58rem;
     color: rgba(255, 255, 255, 0.7);
@@ -1152,6 +1262,7 @@ h3 {
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 750;
+    white-space: normal;
 }
 
 .area-dots {
@@ -1296,6 +1407,14 @@ h3 {
         min-height: auto;
     }
 
+    .hero::after {
+        top: 8rem;
+        right: -8rem;
+        bottom: auto;
+        width: 18rem;
+        height: 18rem;
+    }
+
     .hero-contact {
         max-width: none;
         justify-self: stretch;
@@ -1320,7 +1439,11 @@ h3 {
 @media (max-width: 620px) {
     .site-nav {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 1rem;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        white-space: nowrap;
     }
 
     .theme-grid,
@@ -1329,18 +1452,61 @@ h3 {
         grid-template-columns: 1fr;
     }
 
+    h1 {
+        font-size: clamp(2.55rem, 13vw, 3.35rem);
+    }
+
+    h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero {
+        padding-top: 2.2rem;
+    }
+
     .hero-actions,
     .hero-actions .button {
         width: 100%;
     }
 
     .hero-identity {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+    }
+
+    .hero-identity img {
+        width: 4.4rem;
     }
 
     .hero-contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-snapshot {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-snapshot div {
+        min-height: auto;
+        padding: 0.75rem 0.85rem;
+    }
+
+    .affiliation-strip::before {
+        width: 100%;
+        padding-bottom: 0.1rem;
+    }
+
+    .timeline-shell {
+        margin-right: -1rem;
+        margin-left: -1rem;
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+    }
+
+    .timeline {
+        min-width: 65rem;
+        grid-template-columns: repeat(5, minmax(12rem, 1fr));
     }
 
     .ai-disclaimer {

@@ -1,7 +1,7 @@
 const papersData = [
     {
         title: "Classical Dipole Emission",
-        description: "A first-principles route through classical dipole radiation, connecting electrodynamics intuition with the language used in quantum optics.",
+        description: "A first-principles note on classical dipole radiation, written to connect electrodynamics intuition with the notation often used in quantum optics.",
         link: "papers/theclassicaldipoleradiation.pdf",
         image: "assets/paper-art/classical-dipole-enhanced.png",
         tags: ["optics", "quantum"],
@@ -11,7 +11,7 @@ const papersData = [
     },
     {
         title: "Propagation of Pulses in Waveplates",
-        description: "How optical pulses evolve through birefringent media, with emphasis on polarization, phase delay, and practical waveplate behavior.",
+        description: "A practical derivation of how optical pulses evolve in birefringent media, with attention to polarization, phase delay, and waveplate behavior.",
         link: "papers/pulsepropagationinwaveplates.pdf",
         image: "assets/paper-art/waveplates-enhanced.png",
         tags: ["optics"],
@@ -21,7 +21,7 @@ const papersData = [
     },
     {
         title: "BCS Theory: An ab initio Discussion",
-        description: "A ground-up discussion of superconductivity through Cooper pairing and the Bardeen-Cooper-Schrieffer framework.",
+        description: "A ground-up discussion of superconductivity, Cooper pairing, and the logic behind the Bardeen-Cooper-Schrieffer framework.",
         link: "papers/bcsfinale-1.pdf",
         image: "assets/paper-art/bcs-superconducting-magnet.png",
         tags: ["quantum"],
@@ -31,7 +31,7 @@ const papersData = [
     },
     {
         title: "Y-Gate and Spintronics",
-        description: "A look at spin-based quantum logic and the physical ideas behind quantum gates in spintronic systems.",
+        description: "Notes on spin-based quantum logic and the physical ideas behind quantum gates in spintronic systems.",
         link: "papers/ygate.pdf",
         image: "assets/paper-art/y-gate-spintronics.svg",
         tags: ["quantum"],
@@ -41,7 +41,7 @@ const papersData = [
     },
     {
         title: "Preview: High-Intensity Laser Book",
-        description: "An introductory preview of high-intensity laser physics, nonlinear response, and the regimes where light drives matter strongly.",
+        description: "A preview of high-intensity laser physics, nonlinear response, and regimes where light drives matter far from the perturbative limit.",
         link: "papers/hil.pdf",
         image: "assets/paper-art/high-intensity-lasers-book-cover.jpg",
         tags: ["optics", "experimental"],
@@ -51,7 +51,7 @@ const papersData = [
     },
     {
         title: "Gas Jet Characterization with Fringe Analysis",
-        description: "Experimental characterization of gas jets using interference fringes and optical diagnostics.",
+        description: "An experimental note on gas-jet characterization using interference fringes and optical diagnostics.",
         link: "papers/gasjetcharacterization.pdf",
         image: "assets/paper-art/gas-jet-fringes-enhanced.png",
         tags: ["experimental", "optics"],
@@ -61,7 +61,7 @@ const papersData = [
     },
     {
         title: "On Semiclassical Light-Matter Interaction",
-        description: "A bridge between classical fields and quantum systems, focused on the mechanics of light-matter interaction.",
+        description: "A note on the semiclassical picture, where classical electromagnetic fields are used to describe the response of quantum systems.",
         link: "papers/on-light-matter-quantum-interaction.pdf",
         image: "assets/paper-art/light-matter-quantum-enhanced.png",
         tags: ["quantum", "optics"],
@@ -71,7 +71,7 @@ const papersData = [
     },
     {
         title: "The Conundrum of sqrt(-1) = i",
-        description: "A careful note on imaginary units, square roots, and how complex numbers should be handled without hidden ambiguity.",
+        description: "A careful note on imaginary units, square roots, and the small ambiguities that can hide inside complex-number notation.",
         link: "papers/i__imaginary_units.pdf",
         image: "assets/paper-art/imaginary-unit.svg",
         tags: ["math"],
@@ -88,7 +88,7 @@ const fallbackLatestPaper = {
     year: "2026",
     date: "Published online November 13, 2025",
     url: "https://www.nature.com/articles/s41566-025-01802-1",
-    summary: "Water-window attosecond spectroscopy driven by self-compressed, waveform-stable light transients.",
+    summary: "A recent paper on water-window attosecond spectroscopy using self-compressed, waveform-stable light transients.",
     source: "Google Scholar profile, verified against publisher metadata"
 };
 
@@ -96,29 +96,29 @@ const coreAreas = [
     {
         title: "Attosecond science",
         kicker: "Electronic motion in real time",
-        description: "Federico works with ultrafast electronic dynamics, attosecond metrology, and free-electron laser experiments where timing becomes the observable.",
-        highlight: "timing becomes the observable",
+        description: "Federico works on measurements where electronic motion is followed directly in time, using attosecond pulses and free-electron laser experiments.",
+        highlight: "electronic motion followed directly in time",
         aside: "AI aside: even the agent's latency feels embarrassed by an attosecond."
     },
     {
         title: "Soft X-ray and EUV physics",
         kicker: "Seeing structure through short wavelengths",
-        description: "High-harmonic generation, isolated attosecond pulses, and transient absorption in the spectral range where electronic structure becomes visible.",
-        highlight: "electronic structure becomes visible",
+        description: "His work uses high-harmonic generation, isolated attosecond pulses, and transient absorption to study electronic structure.",
+        highlight: "electronic structure with soft X-rays",
         aside: "AI aside: finally, a wavelength short enough to inspect the agent's hidden layers."
     },
     {
         title: "Laser technology",
         kicker: "Making difficult experiments behave",
-        description: "Few-femtosecond sources, beamline design, optical diagnostics, and the practical craft of making ultrafast experiments stable enough to ask sharp questions.",
-        highlight: "stable enough to ask sharp questions",
+        description: "The experimental side includes few-femtosecond sources, beamline design, optical diagnostics, and stable ultrafast setups.",
+        highlight: "stable ultrafast setups",
         aside: "AI aside: alignment is easier when the beam actually agrees to be aligned."
     },
     {
         title: "Light-matter interaction",
         kicker: "Where fields meet quantum response",
-        description: "Strong-field dynamics from experimental systems to simulation tools, connecting classical fields with quantum response.",
-        highlight: "Classical fields with quantum response",
+        description: "Federico studies how intense light fields drive atoms, molecules, and materials, from experimental signals to microscopic dynamics.",
+        highlight: "from signals to microscopic dynamics",
         aside: "AI aside: a classical field and a quantum system walk into a Hamiltonian."
     }
 ];
